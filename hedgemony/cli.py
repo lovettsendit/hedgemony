@@ -143,9 +143,11 @@ def run_board(args, limits, use_colour):
     if args.out or args.report:
         # The extension decides the format when one is given, so `--out board.html` needs no
         # second flag to say what it means.
-        target = args.out or os.path.join(os.path.dirname(os.path.abspath(directories[0])),
-                                          f"hedgemony-board.{'html' if args.report == 'html'
-                                                         else 'md'}")
+        suffix = "html" if args.report == "html" else "md"
+        target = args.out or os.path.join(
+            os.path.dirname(os.path.abspath(directories[0])),
+            f"hedgemony-board.{suffix}",
+        )
         body = (render_board_html(sources) if target.endswith(".html")
                 else render_board_markdown(sources))
         with open(target, "w", encoding="utf-8") as fh:
