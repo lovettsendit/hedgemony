@@ -10,7 +10,12 @@
   F I N D   W H A T   W A S   M A D E   U P
 ────────────────────────────────────────────────────────────────────────────────
 ```
-
+[![PyPI](https://img.shields.io/pypi/v/hedgemony?style=flat-square&label=PyPI)](https://pypi.org/project/hedgemony/)
+[![Python](https://img.shields.io/pypi/pyversions/hedgemony?style=flat-square)](https://pypi.org/project/hedgemony/)
+[![GitHub Release](https://img.shields.io/github/v/release/lovettsendit/hedgemony?style=flat-square)](https://github.com/lovettsendit/hedgemony/releases/latest)
+[![License: SSPL-1.0](https://img.shields.io/badge/license-SSPL--1.0-blue?style=flat-square)](LICENSE)
+[![Runtime dependencies: 0](https://img.shields.io/badge/runtime%20dependencies-0-brightgreen?style=flat-square)](https://github.com/lovettsendit/hedgemony)
+  
 **hedgemony** finds the things that do not exist in code an AI wrote — packages that were never
 published, methods that were never written, arguments no function accepts — and the code that
 contradicts its own stated examples.
