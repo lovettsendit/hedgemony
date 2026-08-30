@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hedgemony"
+version = "1.0.0"
+description = "Find what an AI made up: invented packages, methods and calls, and code that contradicts its own stated examples."
+readme = "README.md"
+# 3.9, not 3.8, and the reason is a real contradiction rather than caution: the SPDX `license`
+# field below needs setuptools 77, and setuptools 77 itself requires Python 3.9. Declaring 3.8
+# meant a source install on 3.8 could never build its own build environment -- a claim of
+# support that fails on contact. 3.8 has been end-of-life since October 2024.
+requires-python = ">=3.9"
+# SPDX identifier rather than a table: the TOML-table form is deprecated, and SSPL-1.0 is a
+# recognised identifier so tooling can read the licence without parsing the text.
+license = "SSPL-1.0"
+license-files = ["LICENSE"]
+authors = [{ name = "ViDale Lovett" }]
+keywords = ["hallucination", "static-analysis", "code-quality", "ai", "llm", "verification"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+]
+
+# No dependencies, deliberately. The interpreter is the only thing this tool needs in order to
+# answer the question it asks, and a checking tool that drags in a dependency tree becomes one
+# more thing to audit.
+dependencies = []
+
+[project.urls]
+Source = "https://github.com/lovettsendit/hedgemony"
+Issues = "https://github.com/lovettsendit/hedgemony/issues"
+
+[project.scripts]
+hedgemony = "hedgemony.cli:main"
+
+[tool.setuptools]
+packages = ["hedgemony"]
+
+[tool.setuptools.package-data]
+hedgemony = ["_runner.py"]

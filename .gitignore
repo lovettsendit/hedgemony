@@ -1,0 +1,25 @@
+# reports this tool writes next to the files it checks
+*.hedgemony.md
+*.hedgemony.html
+tests.log
+
+# fixture the end-to-end suite writes while running
+examples/clean.py
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# macOS, including the AppleDouble sidecars that some filesystems create for every file
+.DS_Store
+._*
+
+# editors
+.idea/
+.vscode/
+*.swp

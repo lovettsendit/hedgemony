@@ -1,0 +1,16 @@
+include LICENSE
+include README.md
+include AGENT.md
+include SKILL.md
+include PUBLISHING.md
+recursive-include examples *.py
+recursive-include tests *.py
+
+# never ship generated reports, caches, or the metadata companions macOS writes on
+# filesystems that cannot store metadata natively
+global-exclude *.hedgemony.md
+global-exclude *.hedgemony.html
+global-exclude ._*
+global-exclude .DS_Store
+global-exclude *.py[cod]
+prune **/__pycache__
